@@ -83,6 +83,12 @@ function handleTouchEnd() {
     }
 }
 
+// Добавляем обработчики событий touchstart, touchmove, и touchend к контейнеру слайдов
+const slidesContainer = document.querySelector('.slides-container');
+slidesContainer.addEventListener('touchstart', handleTouchStart);
+slidesContainer.addEventListener('touchmove', handleTouchMove);
+slidesContainer.addEventListener('touchend', handleTouchEnd);
+
 // Инициализируем плагин слайдов с активным слайдом по умолчанию
 slidesPlugin(0); // Замените 0 на индекс активного слайда по умолчанию
 
