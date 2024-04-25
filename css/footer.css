@@ -62,9 +62,9 @@
 
 .iconBox {
 	position: absolute; /* Абсолютное позиционирование не нужно, так как мы используем flexbox */
-	width: 40%; /* Ширина iconBox равна 8.85% от ширины footer */
+	width: 20%; /* Ширина iconBox равна 8.85% от ширины footer */
 	height: 90%; /* Высота iconBox равна 41.67% от высоты footer */
-	margin-left: 88.59%; /* Смещение iconBox влево */
+	margin-left: 70%; /* Смещение iconBox влево */
 }
 
 .telegramIcon {
