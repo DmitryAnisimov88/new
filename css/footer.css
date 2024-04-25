@@ -40,7 +40,7 @@
 	position: absolute;
 	bottom: 0;
 	height: 5vh;
-	width: 100%;
+	width: 100vw;
 	background-color: #D9D9D9;
 	color: #222222;
 	display: flex;
