@@ -79,8 +79,8 @@
     z-index: 0; /* Начальный z-index */
 	color: #222222; /* Пример цвета текста */
     text-align: left; /* Центрирование текста */
-	font-size: 24px;
-	line-height: 26px;
+	font-size: 1.25vw;
+	line-height: 1.35vw;
 }
 
 .slide.active .textForSlide {
