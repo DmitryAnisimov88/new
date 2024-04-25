@@ -1,0 +1,311 @@
+/* Слайды */
+.slides-container {
+    display: flex;
+    flex-direction: row;
+	position: absolute;
+    top: 0;
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Корректировка для центрирования */
+    height: 88.89%;
+	width: 100%;
+	color: #222222;
+}
+
+.slide {
+    flex: 1; /* Каждый слайд занимает равное пространство */
+    min-width: 100px;
+	position: relative;
+	align-items: center;
+	cursor: pointer;
+	transition: all 1s ease-in-out;
+}
+
+.slide.active {
+	position: relative;
+ flex:  10; /* Устанавливает flex-grow активного слайда равным 10 */
+ opacity: 1;
+ cursor: default;
+ background: #E6E6E6 !important;
+ }
+ 
+.textSlide {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	transform: rotate(90deg);
+	font-family: Eastman;
+	font-weight: 800;
+	font-size: 6vh;
+	line-height: 102px;
+	text-transform: uppercase;
+	margin-top: 6.57vh;
+	position: relative;
+    opacity: 1; /* Начальная прозрачность */
+    z-index: 99; /* Начальный z-index */
+	transition: all 0.3s ease-out;
+	color: #222222;
+}
+
+.slide.active .textSlide {
+    opacity: 0;
+    z-index: 0;
+}
+
+.heading {
+	position: relative; /* Позволяет использовать z-index для этих элементов */
+    opacity: 0; /* Начальная прозрачность */
+    z-index: 0; /* Начальный z-index */
+	color: #222222; /* Пример цвета текста */
+	font-family: Eastman;
+	font-weight: 800;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+.slide.active .heading {
+	position: absolute;
+    top: 5.21vh; /* Прижимаем изображение к нижней части слайда */
+    left: 14%; /* Прижимаем изображение к левой части слайда */
+	font-size: 11.85vh;
+	line-height: 16.76vh;
+	width: auto;
+    opacity: 1; /* Устанавливаем непрозрачность изображения равной 1 */
+    z-index: 2; /* Устанавливаем z-index изображения равным 2 */
+	transition: opacity 1.3s ease-in-out;
+}
+
+.textForSlide {
+	position: relative; /* Позволяет использовать z-index для этих элементов */
+    opacity: 0; /* Начальная прозрачность */
+    z-index: 0; /* Начальный z-index */
+	color: #222222; /* Пример цвета текста */
+    text-align: left; /* Центрирование текста */
+	font-size: 24px;
+	line-height: 26px;
+}
+
+.slide.active .textForSlide {
+	position: absolute;
+    top: 26.11%; /* Прижимаем изображение к нижней части слайда */
+    left: 5.21%; /* Прижимаем изображение к левой части слайда */
+	width: 30vw;
+    opacity: 1; /* Устанавливаем непрозрачность изображения равной 1 */
+    z-index: 2; /* Устанавливаем z-index изображения равным 2 */
+	transition: opacity 1.3s ease-in-out;
+}
+
+.slideImg {
+	position: relative;
+	background-size: cover; /* Фоновое изображение покроет весь элемент */
+    background-position: center; /* Фоновое изображение будет центрировано */
+    width: 100%; /* Установите ширину элементов */
+    height: 100%; /* Установите высоту элементов */
+    opacity: 0; /* Начальная прозрачность */
+    z-index: 0; /* Начальный z-index */
+}
+
+.slide.active .slideImg {
+	position: absolute;
+    bottom: -10%; /* Прижимаем изображение к нижней части слайда */
+    right: 0; /* Прижимаем изображение к правой части слайда */
+	width: auto;
+    height: 68.24vh; /* Установите высоту элементов */
+    opacity: 1; /* Устанавливаем непрозрачность изображения равной 1 */
+    z-index: 2; /* Устанавливаем z-index изображения равным 2 */
+	transition: all 1.3s ease-out;
+}
+
+.buttonForSlide{
+	position: absolute;
+	width: 27.08vw;
+	height: 13.89vh;
+	left: 5.21%;
+	top: 67.78vh;
+	z-index: 0;
+	opacity: 0;
+	background: #3E98EB;
+	border-radius: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.slide.active .buttonForSlide {
+	z-index: 10;
+	opacity: 1;
+}
+
+.buttonText{
+	color: #FFFFFF;
+	font-size: 5.93vh;
+	text-align: center;
+	z-index: 0;
+	opacity: 0;
+	top: 50%;
+	left:50%;
+}
+
+.slide.active .buttonText {
+	z-index: 11;
+	opacity: 1;
+}
+
+@media (orientation: portrait) {
+
+.slides-container {
+    display: flex;
+    flex-direction: column;
+	position: absolute;
+    top: 0;
+	left: 50vw;
+    height: 95%;
+	width: 100%;
+	color: #222222;
+}
+
+.slide {
+	flex: 1; /* Каждый слайд занимает равное пространство */
+    min-height: 10vw;
+	position: relative;
+	cursor: pointer;
+	transition: all 1s ease-in-out;
+	z-index: 3;
+}
+
+.slide.active {
+	position: relative;
+ flex:  10; /* Устанавливает flex-grow активного слайда равным 10 */
+ opacity: 1;
+ cursor: default;
+ background: #E6E6E6 !important;
+ }
+ 
+.textSlide {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	transform: rotate(0deg);
+	display: flex;
+	align-items: center; /* Центрируем дочерние элементы по вертикали */
+	font-family: Eastman;
+	font-weight: 800;
+	font-size: 5vw;
+	line-height: 9vw;
+	text-transform: uppercase;
+	margin-left: 5vw;
+	position: absolute;
+    opacity: 1; /* Начальная прозрачность */
+    z-index: 99; /* Начальный z-index */
+	transition: all 0.3s ease-out;
+	color: #222222;
+	transform: translateY(-125%);
+}
+
+.slide.active .textSlide {
+    opacity: 0;
+    z-index: 0;
+}
+
+.heading {
+	position: relative; /* Позволяет использовать z-index для этих элементов */
+    opacity: 0; /* Начальная прозрачность */
+    z-index: 0; /* Начальный z-index */
+	color: #222222; /* Пример цвета текста */
+	font-family: Eastman;
+	font-weight: 800;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+.slide.active .heading {
+	position: absolute;
+    top: 5.21%; /* Прижимаем изображение к нижней части слайда */
+    left: 4vw; /* Прижимаем изображение к левой части слайда */
+	font-size: 11.85vw;
+	line-height: 16.76vw;
+	width: auto;
+    opacity: 1; /* Устанавливаем непрозрачность изображения равной 1 */
+    z-index: 2; /* Устанавливаем z-index изображения равным 2 */
+	transition: opacity 1.3s ease-in-out;
+}
+
+.textForSlide {
+	position: relative; /* Позволяет использовать z-index для этих элементов */
+    opacity: 0; /* Начальная прозрачность */
+    z-index: 0; /* Начальный z-index */
+	color: #222222; /* Пример цвета текста */
+    text-align: left; /* Центрирование текста */
+	font-size: 2.71vw;
+	line-height: 2.94vw;
+}
+
+.slide.active .textForSlide {
+	position: absolute;
+    top: 26.11%; /* Прижимаем изображение к нижней части слайда */
+    left: 5.21%; /* Прижимаем изображение к левой части слайда */
+	width: 70vw;
+    opacity: 1; /* Устанавливаем непрозрачность изображения равной 1 */
+    z-index: 2; /* Устанавливаем z-index изображения равным 2 */
+	transition: opacity 1.3s ease-in-out;
+}
+
+.slideImg {
+	position: relative;
+	background-size: cover; /* Фоновое изображение покроет весь элемент */
+    background-position: center; /* Фоновое изображение будет центрировано */
+    width: 100%; /* Установите ширину элементов */
+    height: 100%; /* Установите высоту элементов */
+    opacity: 0; /* Начальная прозрачность */
+    z-index: 0; /* Начальный z-index */
+}
+
+.slide.active .slideImg {
+	position: absolute;
+    bottom: -10%; /* Прижимаем изображение к нижней части слайда */
+    right: 0; /* Прижимаем изображение к правой части слайда */
+	width: auto;
+    height: 68.24vw; /* Установите высоту элементов */
+    opacity: 1; /* Устанавливаем непрозрачность изображения равной 1 */
+    z-index: 2; /* Устанавливаем z-index изображения равным 2 */
+	transition: all 1.3s ease-out;
+}
+
+.buttonForSlide{
+	position: absolute;
+	width: 48.08vw;
+	height: 7.89vh;
+	left: 5.21vw;
+	top: 67.78%;
+	z-index: 0;
+	opacity: 0;
+	background: #3E98EB;
+	border-radius: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.slide.active .buttonForSlide {
+	z-index: 10;
+	opacity: 1;
+}
+
+.buttonText{
+	color: #FFFFFF;
+	font-size: 5.93vw;
+	text-align: center;
+	z-index: 0;
+	opacity: 0;
+	top: 50%;
+	left:50%;
+}
+
+.slide.active .buttonText {
+	z-index: 11;
+	opacity: 1;
+}
+
+.imgForSlide{
+	width: 4.9vw;
+	height: 8.7vh;
+}
+
+}

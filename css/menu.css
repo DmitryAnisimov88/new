@@ -1,0 +1,179 @@
+/* Меню */
+.menu {
+	position: absolute;
+	z-index: 0;
+	visibility: hidden;
+	height: 8.7vh;
+	aspect-ratio: 1/1;
+	background: #E6E6E6; /* Изменено на #E6E6E6 */
+	float: left;
+	top: 10.09vh;
+	left: 5.21%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 40px; /* Добавлено для закругления элемента */
+    background-size: cover; /* Добавлено для масштабирования изображения */
+    background-position: center; /* Добавлено для центрирования изображения */
+}
+
+.slide.active .menu {
+	z-index: 3;
+	visibility: visible;
+}
+
+.menu-back {
+    visibility: hidden;
+	opacity: 0;
+    position: absolute;
+    top: 80%; /* Позиционируем меню под кнопкой */
+    left: 0;
+    width: 100%; /* Ширина меню равна ширине кнопки */
+    z-index: 4; /* Убедитесь, что меню находится над другими элементами */
+	transition: opacity 0.5s ease-in-out;
+}
+
+.menu:hover .menu-back {
+    visibility: visible;
+	opacity: 1;
+	transition: opacity 1s ease-in-out; /* Плавное изменение прозрачности */
+}
+
+.menu ul {
+    display: block; /* Блочное отображение */
+    margin-bottom: 0; /* Отступ снизу */
+    list-style: none; /* Убираем маркеры списка */
+	transition: all 0.2s ease; /* Плавное изменение свойств */
+	width: fit-content;
+	font-size: 26px;
+	color: #222222;
+	background-color: rgba(230, 230, 230, 0.8);
+}
+
+.menu ul li {
+    white-space: nowrap; /* Элемент не переносится на новую строку */
+}
+
+.menu ul li a {
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+	display: block; /* Сделайте ссылку блочным элементом */
+	width: 100%; /* Установите ширину */
+	height: 30%; /* Установите высоту */
+	color: #222222;
+}
+
+.menu ul.nav-history {
+	padding-left: 36px; /* Отступ слева */
+	padding-top: 26px; /* Отступ сверху */
+}
+
+.menu ul.nav-history li {
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.menu ul.nav-history li::after {
+	content: ''; /* Псевдоэлемент */
+	position: absolute; /* Абсолютное позиционирование */
+	margin-top: 10px; /* Отступ сверху */
+	left: 12px; /* Отступ слева */
+	width: 12px; /* Ширина */
+	height: 12px; /* Высота */
+	border-radius: 50%; /* Круглые углы */
+	background: #222222; /* Цвет фона */
+	opacity: 50%;
+	transform: scale(0.9); /* Масштабирование */
+	transition: all 0.2s ease; /* Плавное изменение свойств */
+}
+
+.menu ul.nav-history li::before {
+	content: ''; /* Псевдоэлемент */
+	position: absolute; /* Абсолютное позиционирование */
+	left: 17px; /* Отступ слева */
+	margin-top: 14px; /* Отступ сверху */
+	width: 2px; /* Ширина */
+	height: 24px; /* Высота */
+	background: #222222; /* Цвет фона */
+	opacity: 30%;
+	transform: translateY(-125%);
+}
+
+.menu ul.nav-history li.active {
+	background: #D9D9D9;
+    pointer-events: none; /* Отменяем события мыши */
+}
+
+.menu ul.nav-history li.active::after {
+    background: #D1D1D1; /* Цвет фона */
+}
+
+.menu ul.nav-history li.active a {
+    color: rgba (34, 34, 34, 0.8); /* Цвет текста */
+}
+
+.menu ul.nav-history li a {
+    color: rgba (34, 34, 34, 1); /* Цвет текста */
+    display: inline-block
+}
+
+.menu ul.nav-links {
+	position: absolute;
+	transform: translateY(-50%);
+	margin-top: 15px;
+	padding-left: 12px;
+	opacity: 0.5;
+}
+
+.menu ul.nav-links:hover {
+	opacity: 1;
+	padding-left: 20px;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.menu:hover {
+	background: #D9D9D9;
+	border-radius: 40px;
+	transition: opacity 2s ease-in;
+}
+
+.menuText {
+	width: 100%; /* Задаем ширину блока на всю ширину родительского элемента */
+	height: 100%; /* Задаем высоту блока на всю высоту родительского элемента */
+	position: absolute;
+	margin-top: 75px;
+	justify-content: center; /* Горизонтальное центрирование содержимого */
+	color: #222222;
+	font-size: 16px; /* Размер шрифта */
+	text-align: center; /* Выравнивание текста по центру */
+	z-index: 9;
+}
+
+.imgForSlide{
+	aspect-ratio: 1/1;
+	height: 8.7vh;
+}
+
+@media (orientation: portrait) {
+
+.menu {
+	position: absolute;
+	z-index: 0;
+	visibility: hidden;
+	width: 3vw;
+	height: auto;
+	background: #E6E6E6; /* Изменено на #E6E6E6 */
+	float: left;
+	top: 5vh;
+	left: 5.21%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 40px; /* Добавлено для закругления элемента */
+    background-size: cover; /* Добавлено для масштабирования изображения */
+    background-position: center; /* Добавлено для центрирования изображения */
+}
+
+.slide.active .menu {
+	z-index: 0;
+	visibility: hidden;
+}
+}

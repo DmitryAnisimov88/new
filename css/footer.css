@@ -1,0 +1,74 @@
+/* Футер */
+.footer {
+	position: absolute;
+	bottom: 0;
+	height: 11.11vh; /* Высота футера */
+	width: 100vw;
+	background-color: #D9D9D9;
+	color: #222222;
+	display: flex;
+	align-items: center;
+}
+
+.textBox{
+	position: relative; /* Абсолютное позиционирование не нужно, так как мы используем flexbox */
+	width: 29.95%; /* Ширина iconBox равна 60% от ширины footer */
+	height: 43.33%; /* Высота iconBox равна 80% от высоты footer */
+	margin-left: 5.21%; /* Смещение влево */
+	display: block; /* Используем flexbox для центрирования содержимого */
+}
+
+.footerText {
+	font-size: 2.4vh;
+	white-space: nowrap;
+}
+
+.iconBox {
+    position: absolute; /* Абсолютное позиционирование не нужно, так как мы используем flexbox */
+    width: 8.85%; /* Ширина iconBox равна 8.85% от ширины footer */
+    height: 41.67%; /* Высота iconBox равна 41.67% от высоты footer */
+    margin-left: 88.59%; /* Смещение iconBox влево */
+}
+
+.telegramIcon {
+    width: auto !important; /* Ширина telegramIcon равна 100% от ширины iconBox */
+    height: 100% !important; /* Высота telegramIcon равна 100% от высоты iconBox */
+}
+
+@media (orientation: portrait) {
+.footer {
+	position: absolute;
+	bottom: 0;
+	height: 5vh;
+	width: 100%;
+	background-color: #D9D9D9;
+	color: #222222;
+	display: flex;
+	align-items: center;
+}
+
+.textBox {
+	position: relative; /* Абсолютное позиционирование не нужно, так как мы используем flexbox */
+	width: 40vw; /* Ширина iconBox равна 60% от ширины footer */
+	height: 90%; /* Высота iconBox равна 80% от высоты footer */
+	margin-left: 5.21vw; /* Смещение влево */
+	display: block; /* Используем flexbox для центрирования содержимого */
+}
+
+.footerText {
+	font-size: 2.71vw;
+	white-space: nowrap;
+}
+
+.iconBox {
+	position: absolute; /* Абсолютное позиционирование не нужно, так как мы используем flexbox */
+	width: 40vw; /* Ширина iconBox равна 8.85% от ширины footer */
+	height: 90%; /* Высота iconBox равна 41.67% от высоты footer */
+	margin-left: 88.59vw; /* Смещение iconBox влево */
+}
+
+.telegramIcon {
+	width: auto !important; /* Ширина telegramIcon равна 100% от ширины iconBox */
+	height: 100% !important; /* Высота telegramIcon равна 100% от высоты iconBox */
+}
+}	
